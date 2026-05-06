@@ -1,26 +1,17 @@
 @import "tailwindcss";
 
+/* ده هيخلي الخلفية سوداء في كل الظروف ويشيل أي بياض */
+html, body {
+  background-color: #0a0f1a !important;
+  color: #ffffff !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  direction: rtl; /* عشان التنسيق العربي يظبط */
+}
+
+/* تنسيق إضافي عشان نضمن إن الـ Navbar والكروت تظهر صح */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --background: #0a0f1a;
+  --foreground: #ffffff;
 }

@@ -42,34 +42,44 @@ export default async function Home() {
         {/* شبكة المقالات - نستخدم articles هنا */}
        
         {/* قسم البث المباشر */}
-        <section className="mt-12 border-t border-gray-800 pt-12">
-          <div className="flex items-center gap-3 mb-6 bg-[#161e2f] p-4 rounded-2xl border-r-4 border-green-500">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-            </span>
-            <h2 className="text-2xl font-black text-white">
-              {activeLiveStream ? `بث مباشر الآن: ${activeLiveStream.title}` : "مركز البث المباشر"}
-            </h2>
-          </div>
+       {/* قسم البث المباشر */}
+<section className="mt-12 border-t border-gray-800 pt-12">
+  <div className="flex items-center gap-3 mb-6 bg-[#161e2f] p-4 rounded-2xl border-r-4 border-green-500">
+    <span className="relative flex h-3 w-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+    </span>
+    <h2 className="text-2xl font-black text-white">
+      {activeLiveStream ? `بث مباشر الآن: ${activeLiveStream.title}` : "مركز البث المباشر"}
+    </h2>
+  </div>
 
-          <div className="bg-[#161e2f] p-2 rounded-3xl border border-gray-800 shadow-2xl overflow-hidden">
-            <div className="aspect-video w-full bg-black">
-              {activeLiveStream ? (
-                activeLiveStream.stream_code ? (
-                  <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} />
-                ) : (
-                  <iframe src={activeLiveStream.stream_url} className="w-full h-full" allowFullScreen />
-                )
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-black">
-                   <div className="animate-pulse mb-2 text-green-500/20 text-4xl">⚽</div>
-                   <span className="text-gray-800 text-xs font-bold tracking-[0.2em] uppercase">Signal Waiting</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
+  <div className="bg-[#161e2f] p-2 rounded-3xl border border-gray-800 shadow-2xl overflow-hidden">
+    {/* أضفنا كلاس aspect-video وهيدن للأوفر فلو لضمان التناسق */}
+    <div className="aspect-video w-full bg-black relative">
+      {activeLiveStream ? (
+        activeLiveStream.stream_code ? (
+          /* هنا السر: عملنا كلاس يمسك الـ iframe اللي جوه الـ HTML ويجبره يملأ الشاشة */
+          <div 
+            className="w-full h-full [&_iframe]:w-full [&_iframe]:h-full [&_iframe]:absolute [&_iframe]:top-0 [&_iframe]:left-0" 
+            dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} 
+          />
+        ) : (
+          <iframe 
+            src={activeLiveStream.stream_url} 
+            className="absolute top-0 left-0 w-full h-full" 
+            allowFullScreen 
+          />
+        )
+      ) : (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-black">
+           <div className="animate-pulse mb-2 text-green-500/20 text-4xl">⚽</div>
+           <span className="text-gray-800 text-xs font-bold tracking-[0.2em] uppercase">Signal Waiting</span>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
       </main>
     </div>
   );

@@ -79,18 +79,21 @@ export default async function Home() {
       <main className="max-w-6xl mx-auto p-4 md:p-6 text-right" dir="rtl">
         
         {/* Ad Space */}
-        <div className="w-full flex flex-col items-center justify-center mb-6 md:mb-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-sm py-4">
-          <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase">- إعلان -</span>
-          <div 
-            id="div-gpt-ad-1778252658756-0" 
-            className="max-w-full overflow-hidden flex justify-center"
-            style={{ minWidth: '300px', minHeight: '90px' }}
-          >
-            <script dangerouslySetInnerHTML={{ __html: `
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778252658756-0'); });
-            `}} />
-          </div>
-        </div>
+      {/* Ad Space - التحديث الجديد */}
+<div className="w-full flex flex-col items-center justify-center mb-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-sm py-4 px-2">
+  <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase">- إعلان -</span>
+  
+  {/* وحدة الإعلان الجديدة */}
+  <div 
+    id="div-gpt-ad-1778267424902-0" 
+    className="max-w-full overflow-hidden flex justify-center"
+    style={{ minWidth: '320px', minHeight: '90px' }} 
+  >
+    <script dangerouslySetInnerHTML={{ __html: `
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778267424902-0'); });
+    `}} />
+  </div>
+</div>
 
         {/* 3. مقدمة المقال */}
         <article className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden text-right mb-8 md:mb-12">

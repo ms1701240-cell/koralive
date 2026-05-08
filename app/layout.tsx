@@ -33,12 +33,13 @@ export default function RootLayout({
   <script
     async
     src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    crossOrigin="anonymous"
   />
   <Script id="gpt-init" strategy="afterInteractive">
     {`
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
-        googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778252658756-0').addService(googletag.pubads());
+        googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
         googletag.pubads().collapseEmptyDivs();
         googletag.enableServices();

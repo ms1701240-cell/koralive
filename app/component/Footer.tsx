@@ -7,7 +7,7 @@ export default function Footer() {
         
         {/* حقوق النشر */}
         <p className="text-gray-500 text-[10px] font-bold">
-          © 2026 <span className="text-green-500 italic">KoraNews</span>. جميع الحقوق محفوظة.
+          © 2026 <span className="text-green-500 italic">FLOWERSPOT</span>. جميع الحقوق محفوظة.
         </p>
 
         {/* الروابط المهمة للإعلانات - صغر الخط جداً */}

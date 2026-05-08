@@ -11,11 +11,11 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "كورة نيوز | بث مباشر وأخبار الرياضة لحظة بلحظة",
-  description: "تابع أهم مباريات اليوم، البث المباشر، وآخر أخبار كرة القدم العالمية والمحلية على كورة نيوز.",
+  title: "FlowerSpot | دليلك الشامل لجمال الطبيعة والزهور",
+  description: "استكشف أسرار العناية بالزهور، النباتات المنزلية، وتغطية حية لأجمل الحدائق حول العالم.",
   openGraph: {
-    title: "كورة نيوز - عالم الكرة بين يديك",
-    description: "بث مباشر لجميع مباريات اليوم بجودة عالية",
+    title: "FlowerSpot - عالم الطبيعة بين يديك",
+    description: "كل ما تحتاجه للعناية بنباتاتك في مكان واحد",
     type: "website",
     locale: "ar_EG",
   }
@@ -28,25 +28,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
-      <head>
-      <Script
+      
+     <head>
+  <script
     async
     src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-    strategy="beforeInteractive" // تغيير الاستراتيجية لسرعة التحميل
   />
   <Script id="gpt-init" strategy="afterInteractive">
     {`
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
         googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778252658756-0').addService(googletag.pubads());
-        
-        // تحسينات للسرعة
         googletag.pubads().enableSingleRequest();
-        googletag.pubads().collapseEmptyDivs(); // إخفاء المربعات الفاضية بسرعة لو مفيش إعلان
+        googletag.pubads().collapseEmptyDivs();
         googletag.enableServices();
       });
     `}
   </Script>
+
       </head>
       <body className={`${tajawal.variable} font-tajawal antialiased bg-[#0a0f1a] text-white`}>
         <div className="flex flex-col min-h-screen">

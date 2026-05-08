@@ -30,22 +30,28 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className="scroll-smooth">
       
      <head>
-  <Script id="gpt-init" strategy="afterInteractive">
-  {`
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() {
-      // 1. تعريف إعلان الهيدر (زي ما هو)
-      googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
-      
-      // 2. إضافة تعريف إعلان السايد بار الجديد (السطر ده هو اللي هتزوده)
-      googletag.defineSlot('/23212078890/sidebar_ad_01', [[300, 50], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
+  <Script
+    src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    strategy="beforeInteractive"
+  />
 
-      googletag.pubads().enableSingleRequest();
-      googletag.pubads().collapseEmptyDivs();
-      googletag.enableServices();
-    });
-  `}
-</Script>
+  {/* 2. كود التعريف الخاص بك */}
+  <Script id="gpt-init" strategy="beforeInteractive">
+    {`
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        // تعريف الهيدر
+        googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
+        
+        // تعريف السايد بار
+        googletag.defineSlot('/23212078890/sidebar_ad_01', [[300, 50], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
+
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    `}
+  </Script>
 
       </head>
       <body className={`${tajawal.variable} font-tajawal antialiased bg-[#0a0f1a] text-white`}>

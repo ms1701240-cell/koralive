@@ -181,12 +181,22 @@ export default async function Home() {
                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed">بوابتك لاستكشاف عالم النباتات والزهور، نقدم لك محتوى تعليمي حول الطبيعة.</p>
             </div>
             
-            <div className="bg-[#1a302b] p-6 rounded-xl md:rounded-2xl text-center text-white">
-                <p className="text-[8px] md:text-[9px] font-bold tracking-[0.2em] text-[#48bb78] mb-4">ADVERTISEMENT</p>
-                <div className="w-full h-48 md:h-64 bg-[#253d38] border border-[#2d4a44] rounded-xl flex items-center justify-center italic text-[10px] text-gray-500">
-                  Side Ad Slot
-                </div>
-            </div>
+          {/* إعلان السايد بار الجديد - متوافق مع الموبايل والكمبيوتر */}
+<div className="bg-white p-4 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm text-center">
+    <p className="text-[8px] md:text-[9px] font-bold tracking-[0.2em] text-[#48bb78] mb-4 uppercase">ADVERTISEMENT</p>
+    
+    <div className="flex justify-center items-center w-full">
+      <div 
+        id="div-gpt-ad-1778268313330-0" 
+        className="mx-auto overflow-hidden"
+        style={{ minWidth: '300px', minHeight: '50px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
+      >
+        <script dangerouslySetInnerHTML={{ __html: `
+          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778268313330-0'); });
+        `}} />
+      </div>
+    </div>
+</div>
           </aside>
         </div>
       </main>

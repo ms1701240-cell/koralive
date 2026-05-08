@@ -2,7 +2,7 @@ import Image from "next/image";
 import { supabase } from "@/lib/supabase"; 
 import Link from "next/link";
 import Footer from "./component/Footer";
-
+import AdOverlay from './component/Video';
 export const revalidate = 0;
 
 export default async function Home() {
@@ -128,25 +128,26 @@ export default async function Home() {
         </article>
 
         {/* 4. قسم البث */}
-        <div className="mb-8 md:mb-12">
-            <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 md:w-3 md:h-3 bg-red-600 rounded-full animate-ping"></span>
-                <h3 className="text-base md:text-lg font-black text-[#2d3748]">تغطية حية ومباشرة</h3>
-            </div>
-            <div className="relative bg-black aspect-video w-full rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden border-b-4 md:border-b-8 border-[#48bb78] flex items-center justify-center">
-              {activeLiveStream ? (
-                activeLiveStream.stream_code ? (
-                  <div className="absolute inset-0 w-full h-full [&_iframe]:w-full [&_iframe]:h-full" dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} />
-                ) : (
-                  <iframe src={activeLiveStream.stream_url} className="absolute inset-0 w-full h-full border-0" allowFullScreen />
-                )
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-[#1a1a1a]">
-                   <span className="text-[#48bb78] font-black text-[10px] md:text-xs uppercase tracking-widest">Awaiting Live Feed</span>
-                </div>
-              )}
-            </div>
-        </div>
+        {/* 4. قسم البث المطور بالإعلانات */}
+{/* 4. قسم البث المباشر المطور */}
+<div className="mb-8 md:mb-12">
+    <div className="flex items-center gap-2 mb-4 text-right" dir="rtl">
+        <span className="w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
+        <h3 className="text-base md:text-lg font-black text-[#2d3748]">تغطية حية ومباشرة</h3>
+    </div>
+
+    <AdOverlay>
+      {activeLiveStream ? (
+        activeLiveStream.stream_code ? (
+          <div className="w-full h-full [&_iframe]:w-full [&_iframe]:h-full" dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} />
+        ) : (
+          <iframe src={activeLiveStream.stream_url} className="w-full h-full border-0" allowFullScreen />
+        )
+      ) : (
+        <div className="w-full h-full flex items-center justify-center bg-[#1a1a1a] text-gray-600">Awaiting Feed</div>
+      )}
+    </AdOverlay>
+</div>
         {/* إعلان وسط الصفحة المتجاوب */}
 <div className="w-full flex flex-col items-center justify-center my-8 md:my-12 py-6 bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
   <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic">- ADVERTISEMENT -</span>

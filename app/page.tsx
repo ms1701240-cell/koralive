@@ -147,7 +147,20 @@ export default async function Home() {
               )}
             </div>
         </div>
-
+        {/* إعلان وسط الصفحة المتجاوب */}
+<div className="w-full flex flex-col items-center justify-center my-8 md:my-12 py-6 bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+  <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic">- ADVERTISEMENT -</span>
+  
+  <div 
+    id="div-gpt-ad-1778270091024-0" 
+    className="flex justify-center w-full overflow-hidden"
+    style={{ minWidth: '300px', minHeight: '90px' }}
+  >
+    <script dangerouslySetInnerHTML={{ __html: `
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778270091024-0'); });
+    `}} />
+  </div>
+</div>
         {/* 5. شبكة المقالات متجاوبة */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8">
           <div className="lg:col-span-3">

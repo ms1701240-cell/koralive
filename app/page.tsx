@@ -85,8 +85,15 @@ export default async function Home() {
       <main className="max-w-6xl mx-auto p-4 md:p-6 text-right" dir="rtl">
         
         {/* Ad Space */}
-        <div className="w-full h-24 bg-white border border-gray-200 rounded flex items-center justify-center mb-10 shadow-sm text-gray-300 font-bold uppercase text-[10px]">
-          Advertisement Space
+        <div className="w-full h-70 bg-white border border-gray-200 rounded flex items-center justify-center mb-10 shadow-sm text-gray-300 font-bold uppercase text-[10px]">
+          <div 
+    id="div-gpt-ad-1778252658756-0" 
+    style={{ minWidth: '728px', minHeight: '90px' }}
+  >
+    <script dangerouslySetInnerHTML={{ __html: `
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778252658756-0'); });
+    `}} />
+  </div>
         </div>
         {/* المقال التمويهي لـ Google Adsense - SEO Content */}
          {/* 3. مقدمة المقال (ستايل جنة المفتوح) */}

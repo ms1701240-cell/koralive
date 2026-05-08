@@ -29,12 +29,21 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <head>
-        <Script
-          id="adsense-id"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          strategy="lazyOnload" 
-        />
+       <Script
+    async
+    src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    strategy="afterInteractive"
+  />
+  <Script id="gpt-init" strategy="afterInteractive">
+    {`
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778252658756-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    `}
+  </Script>
       </head>
       <body className={`${tajawal.variable} font-tajawal antialiased bg-[#0a0f1a] text-white`}>
         <div className="flex flex-col min-h-screen">

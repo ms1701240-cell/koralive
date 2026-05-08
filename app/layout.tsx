@@ -51,6 +51,8 @@ export default function RootLayout({
         // إضافة السطر ده لتعريف إعلان الفيديو
 googletag.defineSlot('/23212078890/sidebar_ad_01', [300, 250], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
 
+// تعريف إعلان الفوتر النهائي
+googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
         googletag.pubads().enableSingleRequest();
         googletag.pubads().collapseEmptyDivs();
         googletag.enableServices();

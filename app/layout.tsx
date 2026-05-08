@@ -29,17 +29,20 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <head>
-       <Script
+      <Script
     async
     src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-    strategy="afterInteractive"
+    strategy="beforeInteractive" // تغيير الاستراتيجية لسرعة التحميل
   />
   <Script id="gpt-init" strategy="afterInteractive">
     {`
       window.googletag = window.googletag || {cmd: []};
       googletag.cmd.push(function() {
         googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778252658756-0').addService(googletag.pubads());
+        
+        // تحسينات للسرعة
         googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs(); // إخفاء المربعات الفاضية بسرعة لو مفيش إعلان
         googletag.enableServices();
       });
     `}

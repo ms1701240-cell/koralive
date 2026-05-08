@@ -30,7 +30,7 @@ export default async function Home() {
     <div className="bg-[#f4f7f6] min-h-screen text-[#333] pb-24 font-tajawal">
       
       {/* 1. شريط الأخبار العلوي (النسخة اللي ظبطناها: وقت + عاجل + أنيميشن) */}
-      <div className="bg-[#0f172a] border-b border-red-600 h-10 flex items-center overflow-hidden z-[60] relative" dir="rtl">
+      <div className="bg-[#0f172a] border-b border-red-600 h-10 flex items-center overflow-hidden z-[40] relative" dir="rtl">
         <div className="max-w-7xl mx-auto w-full flex items-center h-full px-4 relative text-white">
           <div className="hidden lg:flex items-center gap-2 text-gray-400 text-[10px] font-bold shrink-0 border-l border-white/10 pl-4 ml-4">
             <span>{new Intl.DateTimeFormat('ar-EG', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date())}</span>
@@ -85,16 +85,23 @@ export default async function Home() {
       <main className="max-w-6xl mx-auto p-4 md:p-6 text-right" dir="rtl">
         
         {/* Ad Space */}
-        <div className="w-full h-70 bg-white border border-gray-200 rounded flex items-center justify-center mb-10 shadow-sm text-gray-300 font-bold uppercase text-[10px]">
+        {/* مساحة الإعلان العلوية - متظبطة للموبايل والكمبيوتر */}
+        <div className="w-full flex flex-col items-center justify-center mb-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-sm py-4">
+          <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase">- إعلان -</span>
+          
           <div 
-    id="div-gpt-ad-1778252658756-0" 
-    style={{ minWidth: '728px', minHeight: '90px' }}
-  >
-    <script dangerouslySetInnerHTML={{ __html: `
-      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778252658756-0'); });
-    `}} />
-  </div>
+            id="div-gpt-ad-1778252658756-0" 
+            className="max-w-full overflow-hidden flex justify-center"
+            style={{ minWidth: '300px', minHeight: '90px' }} // المينيمم للموبايل
+          >
+            <script dangerouslySetInnerHTML={{ __html: `
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778252658756-0'); });
+            `}} />
+          </div>
         </div>
+
+
+
         {/* المقال التمويهي لـ Google Adsense - SEO Content */}
          {/* 3. مقدمة المقال (ستايل جنة المفتوح) */}
             <article className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden text-right">

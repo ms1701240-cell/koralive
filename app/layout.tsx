@@ -35,6 +35,12 @@ export default function RootLayout({
     strategy="beforeInteractive"
   />
 
+  {/* 2. مكتبة IMA الخاصة بإعلانات الفيديو - لازم تكون في سكريبت منفصل */}
+  <Script 
+    src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"
+    strategy="afterInteractive"
+  />
+
   {/* 2. كود التعريف الخاص بك */}
   <Script id="gpt-init" strategy="beforeInteractive">
     {`

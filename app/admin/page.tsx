@@ -75,7 +75,7 @@ const { error } = await supabase
 
   return (
     <div className="min-h-screen bg-[#0a0f1a] text-white p-10 flex flex-col items-center" dir="rtl">
-      <h1 className="text-3xl font-black mb-8 text-green-500 italic">KoraNews Admin</h1>
+      <h1 className="text-3xl font-black mb-8 text-green-500 italic">FLOWERSPOT Admin</h1>
       
       <form onSubmit={updateMatch} className="bg-[#161e2f] p-8 rounded-2xl border border-gray-800 w-full max-w-md shadow-2xl">
         <h2 className="text-xl font-bold mb-6 text-center">تحديث البث المباشر (الرئيسية)</h2>

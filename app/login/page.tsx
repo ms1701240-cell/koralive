@@ -33,7 +33,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#0a0f1a] flex items-center justify-center p-6" dir="rtl">
       <div className="bg-[#161e2f] border border-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-black text-green-500 italic mb-2">KoraNews</h1>
+          <h1 className="text-3xl font-black text-green-500 italic mb-2">FLOWERSPOT</h1>
           <p className="text-gray-400">لوحة تحكم الإدارة</p>
         </div>
 

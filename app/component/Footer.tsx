@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex gap-4 text-[10px] font-bold text-gray-400">
             <Link href="/privacy" className="hover:text-green-500 transition-colors">سياسة الخصوصية</Link>
             <Link href="/terms" className="hover:text-green-500 transition-colors">شروط الاستخدام</Link>
-            <Link href="/contact" className="hover:text-green-500 transition-colors">اتصل بنا</Link>
+            <Link href="/contactpage" className="hover:text-green-500 transition-colors">اتصل بنا</Link>
           </div>
         </div>
 

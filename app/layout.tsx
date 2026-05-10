@@ -55,7 +55,7 @@ export default function RootLayout({
         //تعريف header center
         googletag.defineSlot('/23212078890/Ad_Responsive_02', [[300, 250], [728, 90]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
         // إضافة السطر ده لتعريف إعلان الفيديو
-googletag.defineSlot('/23212078890/sidebar_ad_01', [300, 250], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
+googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
 
 // تعريف إعلان الفوتر النهائي
 googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());

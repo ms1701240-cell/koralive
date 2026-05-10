@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Footer from "./component/Footer";
 import AdOverlay from './component/Video';
+import { match } from "node:assert";
 export const revalidate = 0;
 
 export default async function Home() {
@@ -96,36 +97,72 @@ export default async function Home() {
 </div>
 
         {/* 3. مقدمة المقال */}
-        <article className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden text-right mb-8 md:mb-12">
-          <div className="relative h-[300px] md:h-[500px] w-full bg-gray-100">
-            <Image 
-              src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2000&auto=format&fit=crop"
-              alt="Beautiful Flowers" 
-              fill 
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-            <div className="absolute bottom-6 right-6 left-6 md:bottom-10 md:right-10 md:left-10">
-              <span className="bg-[#48bb78] text-white text-[9px] md:text-[10px] font-bold px-3 py-1 mb-2 md:mb-4 inline-block rounded">عالم الطبيعة</span>
-              <h2 className="text-xl md:text-5xl font-black text-white leading-tight">
-                أجمل أنواع الزهور النادرة: دليل شامل للعناية بنباتات الزينة في منزلك
-              </h2>
-            </div>
-          </div>
+       {/* 3. مقدمة المقال - محتوى محسن لجوجل وأدكس */}
+<article className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden text-right mb-8 md:mb-12">
+  <div className="relative h-[300px] md:h-[550px] w-full bg-gray-100">
+    <Image 
+      src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2000&auto=format&fit=crop"
+      alt="عالم الزهور ونباتات الزينة المنزلية" 
+      fill 
+      className="object-cover"
+      priority
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+    <div className="absolute bottom-6 right-6 left-6 md:bottom-12 md:right-12 md:left-12">
+      <span className="bg-[#48bb78] text-white text-[10px] md:text-[12px] font-black px-4 py-1.5 mb-3 md:mb-6 inline-block rounded-full shadow-lg">
+        دليل الطبيعة 2026
+      </span>
+      <h2 className="text-2xl md:text-6xl font-black text-white leading-[1.2] md:leading-[1.1] mb-4">
+        أسرار الطبيعة: كيف تجعل منزلك جنة خضراء باستخدام زهور الزينة النادرة؟
+      </h2>
+      <p className="text-gray-200 text-sm md:text-xl font-medium max-w-3xl leading-relaxed hidden md:block">
+        اكتشف الدليل الشامل للعناية بالنباتات المنزلية، من اختيار التربة المناسبة وحتى تقنيات الري الحديثة للحفاظ على نضارة زهورك طوال العام.
+      </p>
+    </div>
+  </div>
 
-          <div className="p-6 md:p-10">
-            <div className="prose prose-sm md:prose-lg max-w-none text-gray-600 leading-[1.7] md:leading-[1.9] text-right">
-              <p className="text-base md:text-xl font-medium text-gray-500 mb-4 md:mb-8">
-                تعتبر الزهور لغة الطبيعة التي تعبر عن الجمال والهدوء. في هذا الدليل، نستعرض كيفية تحويل مساحتك الخاصة إلى جنة خضراء.
-              </p>
-              <h3 className="text-lg md:text-2xl font-black text-[#2d3748] mb-4 border-r-4 border-[#48bb78] pr-4">أسرار العناية بالزهور الموسمية</h3>
-              <p>
-                يتطلب الحفاظ على نضارة الزهور فهماً عميقاً لاحتياجاتها من الضوء والري. خبراء <span className="font-bold text-[#48bb78]">FlowerSpot</span> يقدمون لك أفضل النصائح.
-              </p>
-            </div>
-          </div>
-        </article>
+  <div className="p-6 md:p-12">
+    <div className="prose prose-sm md:prose-xl max-w-none text-gray-700 leading-[1.8] md:leading-[2] text-right">
+      <p className="text-lg md:text-2xl font-bold text-[#1a302b] mb-6 md:mb-10 bg-[#f0f7f4] p-4 md:p-6 border-r-8 border-[#48bb78] rounded-l-lg">
+        تعتبر النباتات والزهور الرئة التي يتنفس بها المنزل، فهي ليست مجرد ديكور جمالي، بل هي مصدر للطاقة الإيجابية وتنقية الهواء وتحسين الحالة النفسية لسكان المنزل.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div>
+          <h3 className="text-xl md:text-3xl font-black text-[#2d3748] mb-4">لماذا نهتم بنباتات الزينة؟</h3>
+          <p>
+            تشير الدراسات الحديثة إلى أن وجود الخضرة داخل مساحات العمل أو المعيشة يقلل من مستويات التوتر بنسبة تصل إلى 40%. في <strong>FlowerSpot</strong>، نؤمن بأن كل شخص يستطيع أن يكون "بستانياً" ناجحاً إذا تعلم القواعد الأساسية للتعامل مع الطبيعة.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl md:text-3xl font-black text-[#2d3748] mb-4">أهم متطلبات النمو السليم</h3>
+          <p>
+            تختلف احتياجات الزهور الموسمية عن النباتات المستديمة؛ فبينما تحتاج "الأوركيد" إلى إضاءة غير مباشرة ورطوبة عالية، نجد أن "الصبارات" تزدهر في الأماكن الجافة والمشمسة. الإضاءة، والري، والتهوية هي الثالوث المقدس لنجاح حديقتك المنزلية.
+          </p>
+        </div>
+      </div>
+
+      <h3 className="text-xl md:text-3xl font-black text-[#2d3748] mb-6 border-b-2 border-gray-100 pb-2">خطوات عملية للمبتدئين</h3>
+      <p className="mb-6">
+        ابدأ دائماً بالنباتات "المسامحة" التي لا تموت بسهولة، مثل نبات السانسيفيريا (جلد النمر) أو البوتس. هذه النباتات تعطيك الثقة في البداية وتتحمل أخطاء الري البسيطة. تأكد دائماً من وجود فتحات تصريف في الأواني لمنع تعفن الجذور، واستخدم تربة "بيتموس" خفيفة للسماح للجذور بالتنفس بحرية.
+      </p>
+
+      <div className="bg-[#1a302b] text-white p-6 md:p-10 rounded-2xl my-8 md:my-12 shadow-2xl relative overflow-hidden">
+        <div className="relative z-10">
+          <h4 className="text-2xl md:text-4xl font-black mb-4 text-[#48bb78]">نصيحة الخبراء</h4>
+          <p className="text-base md:text-xl italic">
+            "لا تروِ نباتاتك حسب جدول زمني ثابت، بل المس التربة بإصبعك؛ إذا كانت جافة بعمق 2 سم، فقد حان وقت السقاية. فالإفراط في الري يقتل النباتات أسرع من الجفاف!"
+          </p>
+        </div>
+        <div className="absolute top-[-20px] left-[-20px] text-9xl text-white/5 font-black">✿</div>
+      </div>
+
+      <p className="mb-0">
+        نحن هنا في <strong>FlowerSpot</strong> نوفر لك كافة المعلومات والدروس التعليمية المتقدمة لمتابعة نمو نباتاتك لحظة بلحظة. استمتع برحلتك في عالم الطبيعة وحول منزلك إلى واحة من الراحة والجمال.
+      </p>
+    </div>
+  </div>
+</article>
 
         {/* 4. قسم البث */}
         {/* 4. قسم البث المطور بالإعلانات */}
@@ -181,6 +218,12 @@ export default async function Home() {
                     <div className="mt-auto pt-4 border-t border-gray-50 flex justify-between text-[9px] md:text-[11px] font-bold text-gray-400">
                         <span>أبريل 2026</span>
                         <span className="text-[#48bb78]">Flower Guide</span>
+                        <Link 
+      href={`/match/${article.slug}`}
+      className="bg-green-500 text-white px-4 py-2 rounded mt-2 inline-block"
+    >
+      اقرأ المزيد
+    </Link>
                     </div>
                   </div>
                 </div>

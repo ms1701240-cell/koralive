@@ -5,7 +5,7 @@ export default function ContactPage() {
       <p className="text-lg mb-4">يسعدنا التواصل معكم دائماً.</p>
       <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
         <p className="font-bold text-[#48bb78]">البريد الإلكتروني للدعم:</p>
-        <p className="text-xl mt-2">support@messisporat.com</p>
+        <p className="text-xl mt-2">abbasalasdy37@gmail.com</p>
       </div>
     </div>
   );

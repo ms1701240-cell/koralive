@@ -3,7 +3,8 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Footer from "./component/Footer";
 import AdOverlay from './component/Video';
-import { match } from "node:assert";
+import Script from "next/script";
+
 export const revalidate = 0;
 
 export default async function Home() {
@@ -90,9 +91,12 @@ export default async function Home() {
     className="max-w-full overflow-hidden flex justify-center"
     style={{ minWidth: '320px', minHeight: '90px' }} 
   >
-    <script dangerouslySetInnerHTML={{ __html: `
-      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778267424902-0'); });
-    `}} />
+   <Script id="ad-header-display" strategy="afterInteractive">
+  {`
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778267424902-0'); });
+  `}
+</Script>
   </div>
 </div>
 
@@ -194,9 +198,12 @@ export default async function Home() {
     className="flex justify-center w-full overflow-hidden"
     style={{ minWidth: '300px', minHeight: '90px' }}
   >
-    <script dangerouslySetInnerHTML={{ __html: `
-      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778270091024-0'); });
-    `}} />
+ <Script id="ad-center-display" strategy="afterInteractive">
+  {`
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778270091024-0'); });
+  `}
+</Script>
   </div>
 </div>
         {/* 5. شبكة المقالات متجاوبة */}
@@ -248,9 +255,12 @@ export default async function Home() {
         className="mx-auto overflow-hidden"
         style={{ minWidth: '300px', minHeight: '50px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
       >
-        <script dangerouslySetInnerHTML={{ __html: `
-          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778268313330-0'); });
-        `}} />
+    <Script id="ad-sidebar-display" strategy="afterInteractive">
+  {`
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778268313330-0'); });
+  `}
+</Script>
       </div>
     </div>
 </div>

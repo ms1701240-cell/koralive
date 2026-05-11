@@ -4,7 +4,7 @@ import Link from "next/link";
 import Footer from "./component/Footer";
 import AdOverlay from './component/Video';
 import Script from "next/script";
-
+import AdSlot from './component/Adslot';
 export const revalidate = 0;
 
 export default async function Home() {
@@ -89,14 +89,13 @@ export default async function Home() {
   <div 
     id="div-gpt-ad-1778267424902-0" 
     className="max-w-full overflow-hidden flex justify-center"
-    style={{ width: '320px', height: '90px' }} 
+    style={{ width: '728px', height: '90px' }} 
   >
-   <Script id="ad-header-display" strategy="afterInteractive">
-  {`
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778267424902-0'); });
-  `}
-</Script>
+   <AdSlot 
+  adId="div-gpt-ad-1778267424902-0" 
+  width={728} 
+  height={90} 
+/>
   </div>
 </div>
 
@@ -196,14 +195,13 @@ export default async function Home() {
   <div 
     id="div-gpt-ad-1778270091024-0" 
     className="flex justify-center w-full overflow-hidden"
-    style={{ width: '320px', height: '280px' }}
+    style={{ width: '300px', height: '250px' }}
   >
- <Script id="ad-center-display" strategy="afterInteractive">
-  {`
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778270091024-0'); });
-  `}
-</Script>
+ <AdSlot 
+  adId="div-gpt-ad-1778270091024-0" 
+  width={300} 
+  height={250} 
+/>
   </div>
 </div>
         {/* 5. شبكة المقالات متجاوبة */}
@@ -255,12 +253,11 @@ export default async function Home() {
         className="mx-auto overflow-hidden"
        style={{ width: '300px', height: '600px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
       >
-    <Script id="ad-sidebar-display" strategy="afterInteractive">
-  {`
-    window.googletag = window.googletag || {cmd: []};
-    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778268313330-0'); });
-  `}
-</Script>
+    <AdSlot 
+  adId="div-gpt-ad-1778268313330-0" 
+  width={300} 
+  height={600} 
+/>
       </div>
     </div>
 </div>

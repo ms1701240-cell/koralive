@@ -89,7 +89,7 @@ export default async function Home() {
   <div 
     id="div-gpt-ad-1778267424902-0" 
     className="max-w-full overflow-hidden flex justify-center"
-    style={{ minWidth: '320px', minHeight: '90px' }} 
+    style={{ width: '320px', height: '90px' }} 
   >
    <Script id="ad-header-display" strategy="afterInteractive">
   {`
@@ -196,7 +196,7 @@ export default async function Home() {
   <div 
     id="div-gpt-ad-1778270091024-0" 
     className="flex justify-center w-full overflow-hidden"
-    style={{ minWidth: '300px', minHeight: '90px' }}
+    style={{ width: '320px', height: '280px' }}
   >
  <Script id="ad-center-display" strategy="afterInteractive">
   {`
@@ -253,7 +253,7 @@ export default async function Home() {
       <div 
         id="div-gpt-ad-1778268313330-0" 
         className="mx-auto overflow-hidden"
-        style={{ minWidth: '300px', minHeight: '50px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
+       style={{ width: '300px', height: '600px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
       >
     <Script id="ad-sidebar-display" strategy="afterInteractive">
   {`

@@ -1,14 +1,7 @@
 import type { NextConfig } from "next";
 
-const cspHeader = `
-    default-src 'self' https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com;
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.doubleclick.net https://*.googletagservices.com https://*.googlesyndication.com https://imasdk.googleapis.com http://*.ok.ru https://*.ok.ru http://*.mycdn.me https://*.mycdn.me;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https:;
-    frame-src 'self' https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com http://ok.ru http://*.ok.ru https://*.ok.ru;
-    connect-src 'self' https://*.google.com https://*.doubleclick.net https://*.google-analytics.com https://*.googlesyndication.com https://*.supabase.co wss://*.supabase.co;
-`.replace(/\s{2,}/g, " ").trim();
-
+// في ملف next.config.js أو middleware.ts
+const cspHeader = `default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.google.com https://*.googletagservices.com https://securepubads.g.doubleclick.net https://imasdk.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://images.unsplash.com; connect-src 'self' https://*.google.com https://*.doubleclick.net https://*.supabase.co https://*.googletagservices.com; frame-src 'self' https://*.google.com https://*.doubleclick.net https://*.googlesyndication.com https://*.ok.ru;`.replace(/\n/g, "");
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [

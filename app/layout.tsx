@@ -47,13 +47,23 @@ export default function RootLayout({
           {`
             window.googletag = window.googletag || {cmd: []};
             googletag.cmd.push(function() {
-              googletag.defineSlot('/23212078890/header_ads_01', [728, 90], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
-              googletag.defineSlot('/23212078890/sidebar_ad_01', [[300, 50], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
-              googletag.defineSlot('/23212078890/Ad_Responsive_02', [[300, 250], [728, 90]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
-              googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
-              googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
+             // الهيدر: خليه يقبل 728x90 وكمان مقاس الموبايل الكبير
+  googletag.defineSlot('/23212078890/header_ads_01', [[728, 90], [320, 100]], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
+  
+  // السايد بار: أهم تعديل عشان يبقى "كبير" (نضيف مقاس 300x600)
+  googletag.defineSlot('/23212078890/sidebar_ad_01', [[160, 600], [300, 600], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
+  
+  // إعلان وسط الصفحة: خليه يقبل مقاسات كبيرة برضه
+  googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
+  
+  // الفوتر: خليه يقبل المقاس العريض
+  googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
+
+   googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
+             
               googletag.pubads().enableSingleRequest();
-              googletag.pubads().collapseEmptyDivs();
+              // هيحجز المساحة ويفضل سايبها حتى لو الإعلان صغير أو مفيش إعلان خالص
+             googletag.pubads().collapseEmptyDivs(true, true);
               googletag.enableServices();
             });
           `}

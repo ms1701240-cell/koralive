@@ -61,9 +61,9 @@ export default function RootLayout({
 
    googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
              
-              googletag.pubads().enableSingleRequest();
+    
               // هيحجز المساحة ويفضل سايبها حتى لو الإعلان صغير أو مفيش إعلان خالص
-             googletag.pubads().collapseEmptyDivs();
+             googletag.pubads().collapseEmptyDivs(true);
               googletag.enableServices();
             });
           `}

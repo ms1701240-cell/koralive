@@ -71,7 +71,7 @@ export default async function Home() {
       </div>
 
       {/* 2. Navbar متجاوب */}
-      <nav className="bg-white border-b border-gray-100 p-4 md:p-8 relative  z-50 shadow-sm text-center">
+      <nav className="bg-white border-b border-gray-100 p-4 md:p-8 relative   shadow-sm text-center">
           <div className="text-2xl md:text-4xl font-black text-[#2d3748] tracking-tighter uppercase">
             FLOWER<span className="text-[#48bb78]">SPOT</span>
           </div>
@@ -164,18 +164,28 @@ export default async function Home() {
         {/* 4. قسم البث */}
         {/* 4. قسم البث المطور بالإعلانات */}
 {/* 4. قسم البث المباشر المطور */}
-<div className="mb-8 md:mb-12">
+{/* أضفنا relative و z-30 عشان نضمن إنه فوق الكل */}
+<div className="mb-8 md:mb-12 relative z-30">
     <div className="flex items-center gap-2 mb-4 text-right" dir="rtl">
         <span className="w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
         <h3 className="text-base md:text-lg font-black text-[#2d3748]">تغطية حية ومباشرة</h3>
     </div>
 
+    {/* تأكد إن AdOverlay مش واخد absolute inset-0 بـ z-index أعلى */}
     <AdOverlay>
       {activeLiveStream ? (
         activeLiveStream.stream_code ? (
-          <div className="w-full h-full [&_iframe]:w-full [&_iframe]:h-full" dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} />
+          <div 
+            className="w-full h-full [&_iframe]:w-full [&_iframe]:h-full relative z-40" 
+            style={{ pointerEvents: 'auto' }} // نؤكد إن الضغط شغال
+            dangerouslySetInnerHTML={{ __html: activeLiveStream.stream_code }} 
+          />
         ) : (
-          <iframe src={activeLiveStream.stream_url} className="w-full h-full border-0" allowFullScreen />
+          <iframe 
+            src={activeLiveStream.stream_url} 
+            className="w-full h-full border-0 relative z-40" 
+            allowFullScreen 
+          />
         )
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-[#1a1a1a] text-gray-600">Awaiting Feed</div>

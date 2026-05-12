@@ -71,7 +71,7 @@ export default async function Home() {
       </div>
 
       {/* 2. Navbar متجاوب */}
-      <nav className="bg-white border-b border-gray-100 p-4 md:p-8  z-50 shadow-sm text-center">
+      <nav className="bg-white border-b border-gray-100 p-4 md:p-8 relative  z-50 shadow-sm text-center">
           <div className="text-2xl md:text-4xl font-black text-[#2d3748] tracking-tighter uppercase">
             FLOWER<span className="text-[#48bb78]">SPOT</span>
           </div>
@@ -189,7 +189,7 @@ export default async function Home() {
   <div 
     
     className="flex justify-center w-full overflow-hidden"
-    style={{ width: '300px', height: '250px' }}
+    
   >
  <AdSlot 
   adId="div-gpt-ad-1778270091024-0" 
@@ -243,7 +243,7 @@ export default async function Home() {
     <AdSlot 
       adId="div-gpt-ad-1778268313330-0" 
       width={300} 
-      height={600} 
+      height={250} 
     />
   </div>
 </div>

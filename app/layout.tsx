@@ -64,7 +64,9 @@ export default function RootLayout({
     
               // هيحجز المساحة ويفضل سايبها حتى لو الإعلان صغير أو مفيش إعلان خالص
              googletag.pubads().collapseEmptyDivs(true);
+             
               googletag.enableServices();
+              
             });
           `}
         </Script>

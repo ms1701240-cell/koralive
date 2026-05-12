@@ -1,14 +1,13 @@
-'use client'; // ضروري جداً
+'use client';
+
 import { useEffect } from 'react';
 
-// تعريف googletag عشان TypeScript ميزعلش
 declare global {
   interface Window {
     googletag: any;
   }
 }
 
-// تعريف أنواع البيانات (Props)
 interface AdSlotProps {
   adId: string;
   width: number;
@@ -17,19 +16,23 @@ interface AdSlotProps {
 
 export default function AdSlot({ adId, width, height }: AdSlotProps) {
   useEffect(() => {
-    // التأكد إن مكتبة جوجل موجودة قبل المناداة
-    const gpt = window.googletag;
-    if (gpt && gpt.apiReady) {
-      gpt.cmd.push(function() {
-        gpt.display(adId);
-      });
-    }
-  }, [adId]); // يشتغل مرة واحدة لما الـ ID يتغير
+    if (typeof window === 'undefined') return;
+
+    window.googletag = window.googletag || { cmd: [] };
+
+    window.googletag.cmd.push(() => {
+      window.googletag.display(adId);
+    });
+  }, [adId]);
 
   return (
-    <div 
-      id={adId} 
-      style={{ width: `${width}px`, height: `${height}px`, margin: '0 auto' }} 
+    <div
+      id={adId}
+      style={{
+        width: '100%',
+        minHeight: `${height}px`,
+        margin: '0 auto',
+      }}
     />
   );
 }

@@ -71,7 +71,7 @@ export default async function Home() {
       </div>
 
       {/* 2. Navbar متجاوب */}
-      <nav className="bg-white border-b border-gray-100 p-4 md:p-8 sticky top-0 z-50 shadow-sm text-center">
+      <nav className="bg-white border-b border-gray-100 p-4 md:p-8  z-50 shadow-sm text-center">
           <div className="text-2xl md:text-4xl font-black text-[#2d3748] tracking-tighter uppercase">
             FLOWER<span className="text-[#48bb78]">SPOT</span>
           </div>

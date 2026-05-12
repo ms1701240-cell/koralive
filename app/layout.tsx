@@ -77,7 +77,7 @@ export default function RootLayout({
           <main className="flex-grow px-4 md:px-0">
             {children}
           </main>
-          <Footer />
+          
         </div>
       </body>
     </html>

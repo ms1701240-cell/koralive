@@ -87,7 +87,7 @@ export default async function Home() {
   
   {/* وحدة الإعلان الجديدة */}
  <div 
-    id="div-gpt-ad-1778267424902-0" 
+  
     className="w-full max-w-[728px] min-h-[90px] md:min-h-[90px] flex justify-center"
   >
     <AdSlot 
@@ -192,7 +192,7 @@ export default async function Home() {
   <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic"></span>
   
   <div 
-    id="div-gpt-ad-1778270091024-0" 
+    
     className="flex justify-center w-full overflow-hidden"
     style={{ width: '300px', height: '250px' }}
   >
@@ -248,7 +248,7 @@ export default async function Home() {
     
     <div className="flex justify-center items-center w-full">
       <div 
-        id="div-gpt-ad-1778268313330-0" 
+         
         className="mx-auto overflow-hidden"
        style={{ width: '300px', height: '600px' }} // بيبدأ بـ 50 عشان الموبايل ويفتح لـ 250 في الكمبيوتر
       >

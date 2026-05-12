@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="w-full flex flex-col items-center border-b border-gray-800/50 pb-6 mb-2">
           <span className="text-[8px] text-gray-600 mb-3 tracking-[0.3em] uppercase italic">ADVERTISEMENT</span>
           <div 
-            id="div-gpt-ad-1778273361751-0" 
+            
             style={{ minWidth: '320px', minHeight: '50px' }}
             className="flex justify-center overflow-hidden"
           >

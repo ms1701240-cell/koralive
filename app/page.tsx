@@ -83,19 +83,18 @@ export default async function Home() {
         {/* Ad Space */}
       {/* Ad Space - التحديث الجديد */}
 <div className="w-full flex flex-col items-center justify-center mb-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-sm py-4 px-2">
-  <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase">- إعلان -</span>
+  <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase"></span>
   
   {/* وحدة الإعلان الجديدة */}
-  <div 
+ <div 
     id="div-gpt-ad-1778267424902-0" 
-    className="max-w-full overflow-hidden flex justify-center"
-    style={{ width: '728px', height: '90px' }} 
+    className="w-full max-w-[728px] min-h-[90px] md:min-h-[90px] flex justify-center"
   >
-   <AdSlot 
-  adId="div-gpt-ad-1778267424902-0" 
-  width={728} 
-  height={90} 
-/>
+    <AdSlot 
+      adId="div-gpt-ad-1778267424902-0" 
+      width={728} // الكود هيفهم لوحده يختار 320 لو مفيش مساحة
+      height={90} 
+    />
   </div>
 </div>
 
@@ -190,7 +189,7 @@ export default async function Home() {
 </div>
         {/* إعلان وسط الصفحة المتجاوب */}
 <div className="w-full flex flex-col items-center justify-center my-8 md:my-12 py-6 bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
-  <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic">- ADVERTISEMENT -</span>
+  <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic"></span>
   
   <div 
     id="div-gpt-ad-1778270091024-0" 
@@ -245,7 +244,7 @@ export default async function Home() {
             
           {/* إعلان السايد بار الجديد - متوافق مع الموبايل والكمبيوتر */}
 <div className="bg-white p-4 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm text-center">
-    <p className="text-[8px] md:text-[9px] font-bold tracking-[0.2em] text-[#48bb78] mb-4 uppercase">ADVERTISEMENT</p>
+    <p className="text-[8px] md:text-[9px] font-bold tracking-[0.2em] text-[#48bb78] mb-4 uppercase"></p>
     
     <div className="flex justify-center items-center w-full">
       <div 

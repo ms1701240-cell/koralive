@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import AdSlot from "./Adslot";
 export default function Footer() {
   return (
     <footer className="bg-[#0f172a] border-t border-gray-800 py-6 mt-auto">
@@ -13,9 +13,7 @@ export default function Footer() {
             style={{ minWidth: '320px', minHeight: '50px' }}
             className="flex justify-center overflow-hidden"
           >
-            <script dangerouslySetInnerHTML={{ __html: `
-              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1778273361751-0'); });
-            `}} />
+            <AdSlot adId="div-gpt-ad-1778273361751-0" width={728} height={90} />
           </div>
         </div>
 

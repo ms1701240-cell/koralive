@@ -66,7 +66,8 @@ export default function RootLayout({
               googletag.pubads().enableSingleRequest();
 
               // حجز المساحة عشان الموقع ما يتهزش (Layout Shift)
-              googletag.pubads().collapseEmptyDivs();
+              // الحل العبقري: احجز المساحة بس "اقفلها" لو مفيش إعلان في الآخر خالص
+               googletag.pubads().collapseEmptyDivs(true, true);
               
               googletag.enableServices();
             });

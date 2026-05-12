@@ -31,12 +31,11 @@ export default function AdSlot({
   return (
     <div
       id={adId}
-      className="overflow-hidden flex justify-center items-center"
+      className="overflow-hidden flex justify-center items-center mx-auto"
       style={{
         width: '100%',
         maxWidth: `${width}px`,
         minHeight: `${height}px`,
-        margin: '0 auto',
       }}
     />
   );

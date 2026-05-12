@@ -82,7 +82,7 @@ export default async function Home() {
         
         {/* Ad Space */}
       {/* Ad Space - التحديث الجديد */}
-<div className="w-full flex flex-col items-center justify-center mb-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-sm py-4 px-2">
+<div className="w-full flex flex-col items-center justify-center mb-10 overflow-hidden  py-4 px-2">
   <span className="text-[9px] text-gray-400 mb-2 font-bold tracking-widest uppercase"></span>
   
   {/* وحدة الإعلان الجديدة */}
@@ -188,7 +188,7 @@ export default async function Home() {
     </AdOverlay>
 </div>
         {/* إعلان وسط الصفحة المتجاوب */}
-<div className="w-full flex flex-col items-center justify-center my-8 md:my-12 py-6 bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden">
+<div className="w-full flex flex-col items-center justify-center my-8 md:my-12 py-6    overflow-hidden">
   <span className="text-[9px] text-gray-400 mb-3 tracking-widest uppercase italic"></span>
   
   <div 
@@ -243,7 +243,7 @@ export default async function Home() {
             </div>
             
           {/* إعلان السايد بار الجديد - متوافق مع الموبايل والكمبيوتر */}
-<div className="bg-white p-4 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm text-center">
+<div className=" p-4 rounded-xl md:rounded-2xl   text-center">
     <p className="text-[8px] md:text-[9px] font-bold tracking-[0.2em] text-[#48bb78] mb-4 uppercase"></p>
     
     <div className="flex justify-center items-center w-full">
@@ -263,7 +263,7 @@ export default async function Home() {
           </aside>
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

@@ -66,7 +66,7 @@ export default function RootLayout({
               googletag.pubads().enableSingleRequest();
 
               // حجز المساحة عشان الموقع ما يتهزش (Layout Shift)
-              googletag.pubads().collapseEmptyDivs(false);
+              googletag.pubads().collapseEmptyDivs();
               
               googletag.enableServices();
             });

@@ -75,9 +75,21 @@ export default function RootLayout({
         .addService(googletag.pubads());
       
       // وسط الصفحة (Responsive)
-      googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0')
-        .defineSizeMapping(bannerMapping) // نستخدم ماب البانر هنا برضه
-        .addService(googletag.pubads());
+     // Responsive Mapping
+var responsiveMapping = googletag.sizeMapping()
+  .addSize([1024, 0], [[728, 90], [336, 280]])
+  .addSize([768, 0], [[336, 280], [300, 250]])
+  .addSize([0, 0], [[300, 250]])
+  .build();
+
+// وسط الصفحة
+googletag.defineSlot(
+  '/23212078890/Ad_Responsive_02',
+  [[728, 90], [336, 280], [300, 250]],
+  'div-gpt-ad-1778270091024-0'
+)
+.defineSizeMapping(responsiveMapping)
+.addService(googletag.pubads());
       
       // الفوتر
       googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0')
@@ -87,7 +99,7 @@ export default function RootLayout({
       // إعلان الفيديو (Rewarded)
       googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
 
-      googletag.pubads().enableSingleRequest();
+    
       
       // خليها (true, true) زي ما هي عشان تضمن إنها ما تختفيش إلا لما الطلب يخلص
       googletag.setConfig({

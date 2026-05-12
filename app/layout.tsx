@@ -30,43 +30,45 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <body className={`${tajawal.variable} font-tajawal antialiased bg-[#0a0f1a] text-white`}>
         
-        {/* 1. تم تغيير الإستراتيجية إلى afterInteractive لحل خطأ الـ Build */}
+        {/* 1. السكربت الأساسي - خليه قبل التفاعل لضمان التعريف */}
         <Script
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
 
-        {/* 2. مكتبة IMA */}
+        {/* 2. مكتبة IMA - ممكن تسيبها after عادي لأنها للفيديو */}
         <Script 
           src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"
           strategy="afterInteractive"
         />
 
-        {/* 3. كود التعريف - تم التأكد من وجود window.googletag لمنع ReferenceError */}
-        <Script id="gpt-init" strategy="afterInteractive">
+        {/* 3. كود التعريف - شيل الـ Strategy وخليها الافتراضية عشان يشتغل مع GPT */}
+        <Script id="gpt-init">
           {`
             window.googletag = window.googletag || {cmd: []};
             googletag.cmd.push(function() {
-             // الهيدر: خليه يقبل 728x90 وكمان مقاس الموبايل الكبير
-  googletag.defineSlot('/23212078890/header_ads_01', [[728, 90], [320, 100]], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
-  
-  // السايد بار: أهم تعديل عشان يبقى "كبير" (نضيف مقاس 300x600)
-  googletag.defineSlot('/23212078890/sidebar_ad_01', [[160, 600], [300, 600], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
-  
-  // إعلان وسط الصفحة: خليه يقبل مقاسات كبيرة برضه
-  googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
-  
-  // الفوتر: خليه يقبل المقاس العريض
-  googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
-
-   googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
-             
-    
-              // هيحجز المساحة ويفضل سايبها حتى لو الإعلان صغير أو مفيش إعلان خالص
-             googletag.pubads().collapseEmptyDivs(true);
-             
-              googletag.enableServices();
+              // الهيدر: يقبل مقاسات الموبايل والكمبيوتر
+              googletag.defineSlot('/23212078890/header_ads_01', [[728, 90], [320, 100], [320, 50]], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
               
+              // السايد بار
+              googletag.defineSlot('/23212078890/sidebar_ad_01', [[160, 600], [300, 600], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
+              
+              // وسط الصفحة
+              googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
+              
+              // الفوتر
+              googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
+
+              // إعلان الفيديو (المكافأة)
+              googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
+              
+              // تفعيل الـ SRA لتحسين سرعة التحميل والـ Fill Rate
+              googletag.pubads().enableSingleRequest();
+
+              // حجز المساحة عشان الموقع ما يتهزش (Layout Shift)
+              googletag.pubads().collapseEmptyDivs(true);
+              
+              googletag.enableServices();
             });
           `}
         </Script>

@@ -89,7 +89,7 @@ export default function RootLayout({
       googletag.pubads().enableSingleRequest();
       
       // خليها (true, true) زي ما هي عشان تضمن إنها ما تختفيش إلا لما الطلب يخلص
-      googletag.pubads().collapseEmptyDivs(true, true);
+      googletag.pubads().collapseEmptyDivs(true, false);
       
       googletag.enableServices();
     });

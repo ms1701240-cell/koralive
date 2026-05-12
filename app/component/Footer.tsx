@@ -5,17 +5,13 @@ export default function Footer() {
     <footer className="bg-[#0f172a] border-t border-gray-800 py-6 mt-auto">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-6">
         
-        {/* مساحة الإعلان الجديد داخل الفوتر */}
-        <div className="w-full flex flex-col items-center border-b border-gray-800/50 pb-6 mb-2">
-          <span className="text-[8px] text-gray-600 mb-3 tracking-[0.3em] uppercase italic">ADVERTISEMENT</span>
-          <div 
-            
-            style={{ minWidth: '320px', minHeight: '50px' }}
-            className="flex justify-center overflow-hidden"
-          >
-            <AdSlot adId="div-gpt-ad-1778273361751-0" width={728} height={90} />
-          </div>
-        </div>
+       {/* فوتر الإعلان - مرن تماماً */}
+<div className="w-full flex flex-col items-center border-b border-gray-800/50 pb-6 mb-2">
+  <span className="text-[8px] text-gray-600 mb-3 tracking-[0.3em] uppercase italic">ADVERTISEMENT</span>
+  <div className="flex justify-center overflow-hidden w-full">
+    <AdSlot adId="div-gpt-ad-1778273361751-0" width={728} height={90} />
+  </div>
+</div>
 
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4">
           {/* حقوق النشر */}

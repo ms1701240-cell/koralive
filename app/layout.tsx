@@ -57,7 +57,8 @@ export default function RootLayout({
 
       // 2. تعريف خريطة السايد بار
       var sidebarMapping = googletag.sizeMapping()
-        .addSize([1024, 0], [[300, 600], [160, 600]]) // للكمبيوتر
+        .addSize([1024, 0], [[300, 600], [160, 600]])
+        .addSize([768, 0], [[300, 250]]) // للتابلت
         .addSize([0, 0], [[300, 250]]) // للموبايل حوله لمربع عشان ما يخرجش بره الشاشة
         .build();
 

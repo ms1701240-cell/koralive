@@ -44,36 +44,57 @@ export default function RootLayout({
 
         {/* 3. كود التعريف - شيل الـ Strategy وخليها الافتراضية عشان يشتغل مع GPT */}
         <Script id="gpt-init">
-          {`
-            window.googletag = window.googletag || {cmd: []};
-            googletag.cmd.push(function() {
-              // الهيدر: يقبل مقاسات الموبايل والكمبيوتر
-              googletag.defineSlot('/23212078890/header_ads_01', [[728, 90], [320, 100], [320, 50]], 'div-gpt-ad-1778267424902-0').addService(googletag.pubads());
-              
-              // السايد بار
-              googletag.defineSlot('/23212078890/sidebar_ad_01', [[160, 600], [300, 600], [300, 250]], 'div-gpt-ad-1778268313330-0').addService(googletag.pubads());
-              
-              // وسط الصفحة
-              googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0').addService(googletag.pubads());
-              
-              // الفوتر
-              googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0').addService(googletag.pubads());
+  {`
+    window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+      
+      // 1. تعريف خريطة المقاسات للهيدر والفوتر (اللافتات العريضة)
+      var bannerMapping = googletag.sizeMapping()
+        .addSize([1024, 0], [[728, 90]])   // لو الكمبيوتر أكبر من 1024 بكسل اظهر 728
+        .addSize([768, 0], [[728, 90]])    // للتابلت اظهر 728 برضه
+        .addSize([0, 0], [[320, 100], [320, 50]]) // للموبايل (أي مقاس أصغر) اظهر مقاسات الموبايل
+        .build();
 
-              // إعلان الفيديو (المكافأة)
-              googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
-              
-              // تفعيل الـ SRA لتحسين سرعة التحميل والـ Fill Rate
-              googletag.pubads().enableSingleRequest();
+      // 2. تعريف خريطة السايد بار
+      var sidebarMapping = googletag.sizeMapping()
+        .addSize([1024, 0], [[300, 600], [160, 600]]) // للكمبيوتر
+        .addSize([0, 0], [[300, 250]]) // للموبايل حوله لمربع عشان ما يخرجش بره الشاشة
+        .build();
 
-              // حجز المساحة عشان الموقع ما يتهزش (Layout Shift)
-              // الحل العبقري: احجز المساحة بس "اقفلها" لو مفيش إعلان في الآخر خالص
-               googletag.pubads().collapseEmptyDivs(true, true);
-              
-              googletag.enableServices();
-            });
-          `}
-        </Script>
+      // 3. تعريف الوحدات وربطها بالخرايط (Mapping)
+      
+      // الهيدر
+      googletag.defineSlot('/23212078890/header_ads_01', [[728, 90], [320, 100], [320, 50]], 'div-gpt-ad-1778267424902-0')
+        .defineSizeMapping(bannerMapping)
+        .addService(googletag.pubads());
+      
+      // السايد بار
+      googletag.defineSlot('/23212078890/sidebar_ad_01', [[300, 600], [160, 600], [300, 250]], 'div-gpt-ad-1778268313330-0')
+        .defineSizeMapping(sidebarMapping)
+        .addService(googletag.pubads());
+      
+      // وسط الصفحة (Responsive)
+      googletag.defineSlot('/23212078890/Ad_Responsive_02', [[728, 90], [336, 280], [300, 250]], 'div-gpt-ad-1778270091024-0')
+        .defineSizeMapping(bannerMapping) // نستخدم ماب البانر هنا برضه
+        .addService(googletag.pubads());
+      
+      // الفوتر
+      googletag.defineSlot('/23212078890/footer_bottom_01', [[728, 90], [320, 50]], 'div-gpt-ad-1778273361751-0')
+        .defineSizeMapping(bannerMapping)
+        .addService(googletag.pubads());
 
+      // إعلان الفيديو (Rewarded)
+      googletag.defineSlot('/23212078890/video_ads_01', [[400, 300], [640, 480]], 'div-gpt-ad-video-overlay').addService(googletag.pubads());
+
+      googletag.pubads().enableSingleRequest();
+      
+      // خليها (true, true) زي ما هي عشان تضمن إنها ما تختفيش إلا لما الطلب يخلص
+      googletag.pubads().collapseEmptyDivs(true, true);
+      
+      googletag.enableServices();
+    });
+  `}
+</Script>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow px-4 md:px-0">
             {children}
